@@ -2,7 +2,17 @@
 Self-Driving Car Engineer Nanodegree Program
 
 ---
+## PID description
 
+* Effect of P, I, D component:
+   1. P is propotional to the CTE, will always pull the car back to center
+   2. I is integral of total previous CTE, can handle system error
+   3. D is the differential part, can avoid oscilation
+
+* How to choose hyperparameters:
+
+  Manual tuning is implemented here. First used the same hyperparameters as Sebasian used in the course example but find car oscilate too  much, then I kept decreasing Ki to 0.000002 and found it worked well. Also checked even smaller value of Ki, but too small would make sharp turn difficult.
+ 
 ## Dependencies
 
 * cmake >= 3.5
